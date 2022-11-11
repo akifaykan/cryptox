@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="colorized">
+                <span>FLEX 1</span>
+                <span>FLEX 2</span>
+                <span>FLEX 3</span>
+                <span>FLEX 4</span>
+                <span>FLEX 5</span>
+                <span>FLEX 6</span>
+                <span>FLEX 7</span>
+                <span>FLEX 8</span>
+                <span>FLEX 9</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="crypto-wrap mt mb">
+                <div id="crypto">
+                    <h2 class="crypto__title mb">Add Crypto</h2>
+                    <form id="crypto__form">
+                        <input id="crypto-name" type="text" placeholder="Name">
+                        <input id="crypto-price" type="text" placeholder="Price">
+                        <input id="crypto-date" type="date" value="2022-11-11">
+                        
+                        <button id="crypto-button" class="crypto__button" data-view="show">Save</button>
+                        <button id="crypto-update" class="crypto__button" data-view="hide">Update</button>
+                        <button id="crypto-close" class="crypto__button ml" data-view="hide">Cancel</button>
+                    </form>
+                    <div id="messages"></div>
+                </div>
+                <div id="table">
+                    <div class="table__header">
+                        <h2 class="table__header mb">Crypto List</h2>
+                        <input id="table__search" type="text" placeholder="Search...">
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="table__body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <span>© 2023 Cryptox Project</span>
+        </div>
+    </footer>
+
+    <script src="../bundles/bundle.js"></script>
+</body>
+
+</html>

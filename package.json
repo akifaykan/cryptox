@@ -1,0 +1,14 @@
+{
+  "name": "cryptox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --output-public-path=/bundles/  --mode development --open --hot",
+    "build": "webpack --progress",
+    "json": "json-server --watch api/cryptox.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
