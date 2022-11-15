@@ -2,9 +2,15 @@
   "cryptox": [
     {
       "name": "Bitcoin",
-      "price": 17300,
-      "date": "11.11.2022",
+      "price": 16826,
+      "date": "15.11.2022",
       "id": 1
+    },
+    {
+      "name": "Bitcoin",
+      "price": 17300,
+      "date": "15.11.2022",
+      "id": 2
     }
   ]
 }

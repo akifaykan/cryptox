@@ -6,12 +6,40 @@
 
 export class UI {
     constructor(){
-        this.message    = document.getElementById("messages")
+        this.messages   = document.getElementById("messages")
         this.tableBody  = document.getElementById("table__body")
+        this.name       = document.getElementById("crypto-name")
+        this.price      = document.getElementById("crypto-price")
+        this.close      = document.getElementById('crypto-close')
+        this.update     = document.getElementById('crypto-update')
     }
 
     addItemUI(crypto){
         this.tableBody.innerHTML += this.templateCrypto(crypto)
+    }
+
+    getLoadedItem(cryptos){
+        let results = ""
+
+        cryptos.forEach(crypto => {
+            results += this.templateCrypto(crypto)
+        })
+
+        this.tableBody.innerHTML += results
+    }
+
+    clearInput(){
+        this.name.value = ""
+        this.price.value = ""
+
+        if (this.close.getAttribute('data-view') === 'show'){
+            this.close.setAttribute('data-view', 'hide')
+            this.update.setAttribute('data-view', 'hide')
+
+            /*for (let item of this.table.children) {
+                item.classList.remove('edit')
+            }*/
+        }
     }
 
     templateCrypto(crypto){
@@ -30,9 +58,7 @@ export class UI {
     }
 
     message(message, classes){
-        const messageHtml = `<div class="alert ${classes}">${message}</div>`
-        this.message.insertAdjacentHTML("afterbegin", messageHtml)
-
-        setTimeout( () => {this.message.innerHTML = ""}, 1300 )
+        this.messages.innerHTML = `<div class="alert ${classes}">${message}</div>`
+        setTimeout( () => {this.messages.innerHTML = ""}, 1300 )
     }
 }
