@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     mode: "development",
     //mode: "production",
-    entry: "./src/index.js",
+    entry: "./src/app.js",
     output: {
         path:path.resolve(__dirname, "bundles"),
         filename: "bundle.js",
@@ -18,8 +18,8 @@ module.exports = {
     },
     devServer: {
         static: [
-            {directory: path.join(__dirname, 'public')},
-            {directory: path.join(__dirname, 'src')}
+            path.join(__dirname, 'public'),
+            path.join(__dirname, 'src')
         ],
         compress: true,
         port: 3200

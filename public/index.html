@@ -35,13 +35,24 @@
                 <div id="crypto">
                     <h2 class="crypto__title mb">Add Crypto</h2>
                     <form id="crypto__form">
-                        <input id="crypto-name" type="text" placeholder="Name">
+                        <select id="crypto-select">
+                            <option value="" selected disabled>Select Crypto</option>
+                            <option value="BTC">BTC</option>
+                            <option value="ETH">ETH</option>
+                            <option value="MATIC">MATIC</option>
+                            <option value="DOGE">DOGE</option>
+                            <option value="MANA">MANA</option>
+                            <option value="XRP">XRP</option>
+                            <option value="AVAX">AVAX</option>
+                        </select>
                         <input id="crypto-price" type="text" placeholder="Price">
-                        <input id="crypto-date" type="date" value="2022-11-15">
-                        
-                        <button id="crypto-button" class="crypto__button" data-view="show">Save</button>
-                        <button id="crypto-update" class="crypto__button" data-view="hide">Update</button>
-                        <button id="crypto-close" class="crypto__button ml" data-view="hide">Cancel</button>
+                        <input id="crypto-date" type="date">
+
+                        <div class="crypto__buttons">
+                            <button id="crypto-button" class="crypto__button" data-view="show">Save</button>
+                            <a id="crypto-update" class="crypto__button" data-view="hide">Update</a>
+                            <a id="crypto-close" class="crypto__button ml" data-view="hide">Cancel</a>
+                        </div>
                     </form>
                     <div id="messages"></div>
                 </div>

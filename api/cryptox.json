@@ -1,16 +1,46 @@
 {
   "cryptox": [
     {
-      "name": "Bitcoin",
-      "price": 16826,
-      "date": "15.11.2022",
+      "select": "BTC",
+      "price": 16701,
+      "date": "16.11.2022",
       "id": 1
     },
     {
-      "name": "Bitcoin",
-      "price": 17300,
-      "date": "15.11.2022",
+      "select": "ETH",
+      "price": 1128,
+      "date": "16.11.2022",
       "id": 2
+    },
+    {
+      "select": "MATIC",
+      "price": 0.8981,
+      "date": "20.11.2022",
+      "id": 3
+    },
+    {
+      "select": "DOGE",
+      "price": 0.0874,
+      "date": "16.11.2022",
+      "id": 4
+    },
+    {
+      "select": "MANA",
+      "price": 0.448,
+      "date": "16.11.2022",
+      "id": 5
+    },
+    {
+      "select": "XRP",
+      "price": 0.3795,
+      "date": "29.11.2022",
+      "id": 6
+    },
+    {
+      "select": "AVAX",
+      "price": 13.23,
+      "date": "16.11.2022",
+      "id": 7
     }
   ]
 }

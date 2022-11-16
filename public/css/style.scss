@@ -107,9 +107,6 @@ ol:not(class) {
 .alert.success {
     background-color: #d7ecd5;
 }
-input:-internal-autofill-selected {
-    background-color: var(--colorized2) !important;
-}
 form {
     position: relative;
 }
@@ -264,6 +261,9 @@ footer {
     display: grid;
     grid-template-columns: 30% auto;
     grid-gap: 3rem;
+    .crypto__buttons {
+        display: flex;
+    }
 }
 
 [data-view='show'] {
@@ -282,12 +282,50 @@ footer {
         max-width: 350px;
     }
 }
+#table__body{
+    .crypto-logo-name {
+        display: flex;
+        align-items: center;
+        img{
+            max-width: 24px;
+            margin-right: .5rem;
+        }
+    }
+    .crypto__button {
+        padding: 0;
+        width: 30px;
+        height: 30px;
+    }
+    .flex-end {
+        height: 60px;
+    }
+    #crypto-delete:before,
+    #crypto-edit:before {
+        content: "";
+        width: 30px;
+    }
+    #crypto-edit:before {
+        background: url('../images/edit.svg') no-repeat center center;
+    }
+    #crypto-delete:before {
+        background: url('../images/del.svg') no-repeat center center;
+    }
+    tr.edit {
+        background-color: var(--colorized3);
+    }
+}
+
 
 input::placeholder,
 textarea::placeholder,
 select::placeholder,
-input[id="crypto-date"] {
+input[id="crypto-date"],
+select {
     color: var(--colorized6);
+}
+select,
+select option {
+    font-weight: 600;
 }
 
 @media screen and (max-width: 1300px) {
