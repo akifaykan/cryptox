@@ -16,11 +16,11 @@ export class UI {
         this.button     = document.getElementById('crypto-button')
     }
 
-    addItemUI(crypto){
+    addCryptoUI(crypto){
         this.tableBody.innerHTML += this.templateCrypto(crypto)
     }
 
-    getLoadedItem(cryptos){
+    getLoadedCrypto(cryptos){
         let results = ""
 
         cryptos.forEach(crypto => {
@@ -30,43 +30,21 @@ export class UI {
         this.tableBody.innerHTML += results
     }
 
-    editItemUI(item){
-        this.buttonsDisplay(true)
+    editCryptoUI(crypto){
+        this.editOrCancelButtonDisplay(true)
 
-        this.select.value = item.getAttribute('data-name')
-        this.price.value = item.getAttribute('data-price')
+        this.select.value = crypto.getAttribute('data-name')
+        this.price.value = crypto.getAttribute('data-price')
 
-        for (let item of this.tableBody.children) {
-            item.classList.remove('edit')
+        for (let listCrypto of this.tableBody.children) {
+            listCrypto.classList.remove('edit')
         }
 
-        item.classList.add('edit')
+        crypto.classList.add('edit')
     }
 
-    updateItemUI(item, updateItem){
-        item.innerHTML = this.templateCrypto(updateItem)
-    }
-
-    clearInput(){
-        this.select.value = ""
-        this.price.value = ""
-        this.buttonsDisplay(false)
-    }
-
-    buttonsDisplay(display){
-        if (display){
-            this.close.setAttribute('data-view', 'show')
-            this.update.setAttribute('data-view', 'show')
-            this.button.setAttribute('data-view', 'hide')
-        } else {
-            this.close.setAttribute('data-view', 'hide')
-            this.update.setAttribute('data-view', 'hide')
-            this.button.setAttribute('data-view', 'show')
-
-            for (let item of this.tableBody.children) {
-                item.classList.remove('edit')
-            }
-        }
+    updateCryptoUI(crypto, updateCrypto){
+        crypto.innerHTML = this.templateCrypto(updateCrypto)
     }
 
     templateCrypto(crypto){
@@ -87,6 +65,24 @@ export class UI {
                 </td>
             </tr>
         `
+    }
+
+    clearInput(){
+        this.select.value = ""
+        this.price.value = ""
+        this.editOrCancelButtonDisplay(false)
+    }
+
+    editOrCancelButtonDisplay(display){
+        if (!display){
+            for (let listCrypto of this.tableBody.children) {
+                listCrypto.classList.remove('edit')
+            }
+        }
+
+        this.close.setAttribute('data-view', display)
+        this.update.setAttribute('data-view', display)
+        this.button.setAttribute('data-view', !display)
     }
 
     message(message, classes){

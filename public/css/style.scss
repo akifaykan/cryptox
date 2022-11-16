@@ -266,11 +266,11 @@ footer {
     }
 }
 
-[data-view='show'] {
+[data-view='true'] {
     display: inline-flex;
 }
 
-[data-view='hide'] {
+[data-view='false'] {
     display: none;
 }
 
