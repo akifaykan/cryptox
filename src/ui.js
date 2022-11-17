@@ -47,6 +47,24 @@ export class UI {
         crypto.innerHTML = this.templateCrypto(updateCrypto)
     }
 
+    searchFilterUI(cryptos, input){//crypto, input
+        let template = ""
+
+        const result = cryptos.filter(crypto => {
+            return crypto.select.toLowerCase().includes(input.target.value.toLowerCase())
+        })
+
+        if(result.length){
+            result.forEach(item => {
+                template += this.templateCrypto(item)
+            })
+        } else {
+            template = '<tr><td colspan="4" style="text-align:center">Crypto not found!</td></tr>'
+        }
+
+        this.tableBody.innerHTML = template
+    }
+
     templateCrypto(crypto){
         return `
             <tr data-id="${crypto.id}" data-name="${crypto.select}" data-price="${crypto.price}">

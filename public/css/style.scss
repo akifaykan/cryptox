@@ -1,5 +1,5 @@
 :root {
-    --hue: 230;
+    --hue: 250;
     --percent: 15%;
     --colorized1: hsl(var(--hue), var(--percent), 98%);
     --colorized2: hsl(var(--hue), var(--percent), 93%);
@@ -219,7 +219,7 @@ table {
 }
 
 .crypto__button {
-    background-color: var(--colorized9);
+    background-color: var(--colorized8);
     color: var(--colorized1);
     padding: 0.4rem 0.8rem;
     border-radius: 2px;
@@ -229,7 +229,7 @@ table {
     cursor: pointer;
     font-weight: bold;
     &:hover {
-        background-color: var(--colorized8);
+        background-color: var(--colorized7);
         color: var(--colorized1);
     }
 }
@@ -326,6 +326,41 @@ select {
 select,
 select option {
     font-weight: 600;
+}
+
+
+#color-range {
+    width: 100%;
+    margin-top: 2.5rem;
+    p {
+        margin-bottom: .3rem;
+    }
+    .range {
+        -webkit-appearance: none;
+        height: 25px;
+        outline: none;
+        opacity: 1;
+        -webkit-transition: .4s;
+        transition: opacity .4s;
+        padding: 0;
+    }
+    .range:hover {
+        opacity: .8;
+    }
+    .range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: var(--colorized6);
+        cursor: pointer;
+    }
+    .range::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: var(--colorized6);
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 1300px) {
